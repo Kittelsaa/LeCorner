@@ -1,5 +1,5 @@
 import './index.css'
-import {useState} from 'react'
+import React,{useState} from 'react'
 import Navbar from './components/Navbar';
 import Theproducts from './components/Theproducts';
 import AddProduct from './components/AddProduct';
@@ -16,6 +16,7 @@ import img10 from './acc/man.jpg'
 import img11 from './acc/mee.jpg'
 import img12 from './acc/mm.jpg'
 import Cart from './components/Cart';
+
 
 
 
@@ -138,7 +139,7 @@ function App() {
   
   const [cart, setCart] = useState([])
   const handleClick = (product) => {
-    if (cart.indexOf(product)!== -1) return;
+    if (cart.indexOf(product) !== -1) return;
     setCart([...cart, product]);
   }
 
@@ -153,7 +154,8 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <React.StrictMode>
+
       <Navbar onAdd= {() => setViewNewProduct(!viewNewProduct)} viewNew={viewNewProduct} setShow={setShow} />
       { viewNewProduct && <AddProduct onAdd={addProduct}/>}
       {show ? (
@@ -162,9 +164,9 @@ function App() {
         <Cart cart={cart} setCart={setCart} handleChange={handleChange}/>
       )}
       
-    </div>
+    </React.StrictMode>
   );
-}
+};
 
 export default App;
 

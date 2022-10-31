@@ -14,11 +14,12 @@ const Cart = ({cart, setCart, handleChange}) => {
         let ans = 0;
         cart.map((product) => (ans += product.amount * product.price));
         setPrice(ans);
-    }
+    };
 
     useEffect(() => {
         handlePrice();
-    })
+    });
+
   return (
     <>
     <h1 className=" m-12 font-light underline underline-offset-8 text-3xl font-normal text-zinc-600 pl-8 pt-8 ">Shopping cart</h1>
@@ -43,7 +44,7 @@ const Cart = ({cart, setCart, handleChange}) => {
 
         <div className='text-base font-medium mt-12 ml-60 mb-32 pl-0'>
             <span>Total price of your cart <br></br></span>
-            <button> - {price} </button>
+            <span> - {price} </span>
         </div>
 
     </>

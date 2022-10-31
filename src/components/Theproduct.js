@@ -1,4 +1,4 @@
-
+import React from "react"
 
 const Theproduct = ({product, handleClick}) => {
     return (
