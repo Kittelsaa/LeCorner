@@ -30,10 +30,10 @@ const Cart = ({cart, setCart, handleChange}) => {
             </div>
             <p className="text-center" >{product.details}</p>
             <p className="text-center" >${product.price}</p>
-            <div className="text-center">
-                <button onClick={() => handleChange(product, 1)}>+</button>
+            <div className="text-center rounded-full p-1 w-24 h-8 text-black bg-zinc-200">
+                <button className='pr-3' onClick={() => handleChange(product, 1)}>+</button>
                 <button>{product.amount}</button>
-                <button onClick={() => handleChange(product, -1)}>-</button>
+                <button className='pl-3' onClick={() => handleChange(product, -1)}>-</button>
             </div>
             <div className="">
                 <button className='' onClick={() => handleRemove(product.id)}>Remove</button>
@@ -41,7 +41,7 @@ const Cart = ({cart, setCart, handleChange}) => {
            </div> 
         ))}
 
-        <div className='text-base font-thin mt-12 ml-96 mb-32 pl-96'>
+        <div className='text-base font-medium mt-12 ml-60 mb-32 pl-0'>
             <span>Total price of your cart <br></br></span>
             <button> - {price} </button>
         </div>
