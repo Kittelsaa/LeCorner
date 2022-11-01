@@ -22,11 +22,11 @@ const Cart = ({cart, setCart, handleChange}) => {
 
   return (
     <>
-    <h1 className=" m-12 font-light underline underline-offset-8 text-3xl font-normal text-zinc-600 pl-8 pt-8 ">Shopping cart</h1>
+    <h1  className=" m-12 font-light underline underline-offset-8 text-3xl font-normal text-zinc-600 pl-8 pt-8 ">Shopping cart</h1>
         {cart.map((product) => (
-           <div className="cartbox mt-24 ml-20 flex text-base font-thin  grid-cols-5 gap-y-4 gap-x-24" key={product.id}>
+           <div key={product.id} className="cartbox mt-24 ml-20 flex text-base font-thin  grid-cols-5 gap-y-4 gap-x-24" key={product.id}>
             <div className='cartpic '>
-                <p className='ml-1'>{product.name}</p>
+                <p className='ml-1'>{product.title}</p>
                 <img src={product.image} className="w-16 h-20 p-3" />
             </div>
             <p className="text-center" >{product.details}</p>

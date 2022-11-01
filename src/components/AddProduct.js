@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const AddProduct = ({onAdd}) => {
     const [image, SetImage]= useState('')
-    const [name, setName]= useState('')
+    const [title, setTitle]= useState('')
     const [details, setDetails]= useState('')
     const [price, setPrice]= useState('')
     const [sold, setSold]= useState(false)
@@ -10,14 +10,14 @@ const AddProduct = ({onAdd}) => {
 
     const onSubmit = (e) => {
         e.preventDefault()
-        if (!name) {
+        if (!title) {
             alert( 'Please enter product name')
         }
 
-        onAdd ({ image, name, details, price, sold })
+        onAdd ({ image, title, details, price, sold })
 
         SetImage('')
-        setName('')
+        setTitle('')
         setDetails('')
         setPrice('')
         setSold(true)
@@ -31,7 +31,7 @@ const AddProduct = ({onAdd}) => {
       </div>
       <div className="form-control">
         <label className='text-indigo-200'> Product</label>
-        <input className="m-2 p-1 rounded" type='text' placeholder='Add product name' value={name} onChange={(e)=> setName(e.target.value)}/>
+        <input className="m-2 p-1 rounded" type='text' placeholder='Add product name' value={title} onChange={(e)=> setTitle(e.target.value)}/>
       </div>
       <div className="form-control">
         <label className='text-indigo-200'>Details</label>
