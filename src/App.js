@@ -15,9 +15,7 @@ import img9 from './acc/hobo.jpg'
 import img10 from './acc/man.jpg'
 import img11 from './acc/mee.jpg'
 import img12 from './acc/mm.jpg'
-import Cart from './components/Cart';
-
-
+import Cart from './components/Cart'
 
 
 
@@ -153,9 +151,11 @@ function App() {
     setCart([...arr]);
   }
 
+  // routing 
+  
+  
   return (
-    <React.StrictMode>
-
+    <>
       <Navbar onAdd= {() => setViewNewProduct(!viewNewProduct)} viewNew={viewNewProduct} setShow={setShow} />
       { viewNewProduct && <AddProduct onAdd={addProduct}/>}
       {show ? (
@@ -163,8 +163,7 @@ function App() {
         ) : (
         <Cart cart={cart} setCart={setCart} handleChange={handleChange}/>
       )}
-      
-    </React.StrictMode>
+    </>
   );
 };
 
